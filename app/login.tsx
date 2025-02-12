@@ -31,6 +31,7 @@ export default function Login() {
         style={styles.input}
       />
       <Button title="Login" onPress={handleLogin} />
+      <Button title="Two" onPress={() => router.push("/two")} />
     </View>
   );
 }
