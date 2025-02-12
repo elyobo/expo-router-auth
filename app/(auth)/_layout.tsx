@@ -1,10 +1,13 @@
-import { Redirect, Stack } from 'expo-router';
+import { usePathname, useSegments, Redirect, Stack } from 'expo-router';
 
 import { useSession } from '../ctx';
 import { Text } from '@/components/Themed';
 
 export default function AppLayout() {
   const { session, isLoading } = useSession();
+
+  console.log('(auth)', { segments: useSegments(), pathname: usePathname() })
+
   // You can keep the splash screen open, or render a loading screen like we do here.
   if (isLoading) {
     return <Text>Loading...</Text>;

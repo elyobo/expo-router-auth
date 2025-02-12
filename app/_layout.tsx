@@ -3,6 +3,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { SessionProvider } from "./ctx";
+import { useSegments, usePathname } from "expo-router";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -22,6 +23,7 @@ export default function RootLayout() {
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     ...FontAwesome.font,
   });
+  console.log('root', { segments: useSegments(), pathname: usePathname() })
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
